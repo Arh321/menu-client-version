@@ -1,4 +1,4 @@
-import ImageWithLoader from "@/components/image-with-loader/image-with-loader";
+import ImageWithLoader from "@/components/shared-components/image-with-loader/image-with-loader";
 import { IBasketState } from "@/types/menu/menu-types";
 import { toPersianCurrency } from "@/utils/numberToRial";
 import { useMemo } from "react";

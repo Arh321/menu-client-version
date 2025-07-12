@@ -15,8 +15,11 @@ const BasketPopup = () => {
 
   return basket.length > 0 ? (
     <div
+      style={{
+        transform: "translateY(100%)",
+      }}
       onClick={() => navigate(`/departments/${depId}/basket`)}
-      className="w-full h-max  animate-fadeUp translate-y-full !duration-200 fixed bottom-8 left-0 right-0  z-50"
+      className="w-full h-max  animate-fadeUp !duration-200 fixed bottom-8 left-0 right-0  z-50"
     >
       <div className="w-[90%]  h-full flex flex-col gap-4 p-4 mx-auto bg-light-primary rounded-lg">
         <div className="w-full h-full flex  items-center justify-between">

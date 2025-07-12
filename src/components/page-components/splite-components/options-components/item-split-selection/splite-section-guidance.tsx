@@ -19,7 +19,7 @@ const SplitSectionGuidance: React.FC<SplitSectionGuidanceProps> = ({
   setOpenGuidance,
 }) => {
   const stepsClassName =
-    "[&_.ant-tour-content]:!flex [&_.ant-tour-content]:justify-center [&_.ant-tour-inner]:bg-light-secondary [&_.ant-tour-close]:!text-light-secondary-text [&_.ant-tour-inner]:!text-light-secondary-text [&_.ant-tour-inner]:backdrop-blur-sm [&_.ant-tour-inner]:!font-Yekan-Regular [&_.ant-tour-inner]:!w-[80%] [&_.ant-tour-title]:!font-[300] [&_.ant-tour-title]:font-Yekan-Medium [&_.ant-tour-title]:!text-lg";
+    "[&_.ant-tour-content]:!flex [&_.ant-tour-content]:justify-center [&_.ant-tour-inner]:!bg-light-text [&_.ant-tour-close]:!text-light-text-text [&_.ant-tour-inner]:!text-light-secondary-text [&_.ant-tour-inner]:backdrop-blur-sm [&_.ant-tour-inner]:!font-Yekan-Regular [&_.ant-tour-inner]:!w-[80%] [&_.ant-tour-title]:!font-[300] [&_.ant-tour-title]:font-Yekan-Medium [&_.ant-tour-title]:!text-lg";
   const steps: TourProps["steps"] = [
     {
       title: "تقسیم بندی رو شروع کن",
@@ -35,7 +35,7 @@ const SplitSectionGuidance: React.FC<SplitSectionGuidanceProps> = ({
             رو برداشته. می‌تونی یک نفر رو چند بار روی یه آیتم بندازی تا تعداد
             سهمش بیشتر بشه.
           </p>
-          <div className="bg-light-primary/10 p-3 rounded-xl text-[13px] space-y-1 border border-light-primary/20">
+          <div className="bg-light-primary/10 p-3 rounded-xl text-[13px] space-y-1 border !border-light-primary/20 !text-light-secondary-text">
             <p className="font-Yekan-Medium">🧠 مثال واقعی:</p>
             <p>مثلاً یه پیتزا سفارش دادین 🍕 و «علی» خیلی گرسنه‌س:</p>
             <p>• یه بار علی رو روی پیتزا بندازی → یه سهم برای علی</p>
@@ -47,7 +47,7 @@ const SplitSectionGuidance: React.FC<SplitSectionGuidanceProps> = ({
       className: stepsClassName,
       nextButtonProps: {
         className:
-          "bg-light-primary text-light-primary-text font-Yekan-Medium [&_span]:!font-[300]",
+          "!bg-light-primary !text-light-primary-text !font-Yekan-Medium [&_span]:!font-[300]",
         children: "بزن بریم",
       },
       mask: {
@@ -67,12 +67,12 @@ const SplitSectionGuidance: React.FC<SplitSectionGuidanceProps> = ({
       className: stepsClassName,
       prevButtonProps: {
         className:
-          "bg-light-primary text-light-primary-text font-Yekan-Medium [&_span]:!font-[300] !border-none",
+          "!bg-light-primary !text-light-primary-text !font-Yekan-Medium [&_span]:!font-[300] !border-none",
         children: "قبلی",
       },
       nextButtonProps: {
         className:
-          "bg-light-primary text-light-primary-text font-Yekan-Medium [&_span]:!font-[300]",
+          "!bg-light-primary !text-light-primary-text !font-Yekan-Medium [&_span]:!font-[300]",
         children: "بعدی",
       },
     },
@@ -84,12 +84,12 @@ const SplitSectionGuidance: React.FC<SplitSectionGuidanceProps> = ({
       target: () => ref2.current!,
       prevButtonProps: {
         className:
-          "bg-light-primary text-light-primary-text font-Yekan-Medium [&_span]:!font-[300] !border-none",
+          "!bg-light-primary !text-light-primary-text !font-Yekan-Medium [&_span]:!font-[300] !border-none",
         children: "قبلی",
       },
       nextButtonProps: {
         className:
-          "bg-light-primary text-light-primary-text font-Yekan-Medium [&_span]:!font-[300]",
+          "!bg-light-primary !text-light-primary-text !font-Yekan-Medium [&_span]:!font-[300]",
         children: "بعدی",
       },
     },
@@ -101,12 +101,12 @@ const SplitSectionGuidance: React.FC<SplitSectionGuidanceProps> = ({
       target: () => ref3.current!,
       prevButtonProps: {
         className:
-          "bg-light-primary text-light-primary-text font-Yekan-Medium [&_span]:!font-[300] !border-none",
+          "!bg-light-primary !text-light-primary-text !font-Yekan-Medium [&_span]:!font-[300] !border-none",
         children: "قبلی",
       },
       nextButtonProps: {
         className:
-          "bg-light-primary text-light-primary-text font-Yekan-Medium [&_span]:!font-[300]",
+          "!bg-light-primary !text-light-primary-text !font-Yekan-Medium [&_span]:!font-[300]",
         children: "تمام شد",
       },
     },

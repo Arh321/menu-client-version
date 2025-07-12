@@ -1,13 +1,13 @@
+import { lazyWithFallback } from "@/components/shared-components/lazyWithFallback/lazyWithFallback";
 import { LoadingOutlined } from "@ant-design/icons";
 
-const DynamicOptionsContainer = dynamic(
+const DynamicOptionsContainer = lazyWithFallback(
   () =>
     import(
       "@/components/page-components/splite-components/options-components/options-container"
     ),
   {
-    ssr: false, // Optionally disable server-side rendering
-    loading: () => (
+    fallback: (
       <div className="w-full h-full flex items-center justify-center">
         <span className="w-max h-max block text-4xl text-light-secondary-text">
           <LoadingOutlined />
@@ -17,14 +17,13 @@ const DynamicOptionsContainer = dynamic(
   }
 );
 
-const DynamicParticipantsComponent = dynamic(
+const DynamicParticipantsComponent = lazyWithFallback(
   () =>
     import(
       "@/components/page-components/splite-components/participants-components/participants-container"
     ),
   {
-    ssr: false, // Optionally disable server-side rendering
-    loading: () => (
+    fallback: (
       <div className="w-full h-full flex items-center justify-center">
         <span className="w-max h-max block text-4xl text-light-secondary-text">
           <LoadingOutlined />
@@ -34,14 +33,13 @@ const DynamicParticipantsComponent = dynamic(
   }
 );
 
-const DynamicResultComponent = dynamic(
+const DynamicResultComponent = lazyWithFallback(
   () =>
     import(
       "@/components/page-components/splite-components/result-component/result-component"
     ),
   {
-    ssr: false, // Optionally disable server-side rendering
-    loading: () => (
+    fallback: (
       <div className="w-full h-full flex items-center justify-center">
         <span className="w-max h-max block text-4xl text-light-secondary-text">
           <LoadingOutlined />
