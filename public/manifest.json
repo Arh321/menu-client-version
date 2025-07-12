@@ -20,8 +20,8 @@
   "dir": "auto",
   "lang": "en-US",
   "name": "منو کافه نون",
-  "start_url": "https://menu.dashboard.loyaltyhub.ir",
-  "scope": "https://menu.dashboard.loyaltyhub.ir",
+  "start_url": "https://menu.loyaltyhub.ir.ir",
+  "scope": "https://menu.loyaltyhub.ir.ir",
   "description": "مجموعه‌ای از کافه‌های زنجیره‌ای",
-  "id": "https://menu.dashboard.loyaltyhub.ir"
+  "id": "https://menu.loyaltyhub.ir.ir"
 }

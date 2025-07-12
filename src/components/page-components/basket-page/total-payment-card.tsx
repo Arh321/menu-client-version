@@ -1,10 +1,8 @@
-"use client";
-
 import useBasketTotalInfo from "@/hooks/useBAsketTotalInfo";
 
 import { toPersianCurrency } from "@/utils/numberToRial";
 import { Button } from "antd";
-import React, { memo, useState } from "react";
+import { memo, useState } from "react";
 
 const TotalPaymentCard = () => {
   const isOpen = useState(true);

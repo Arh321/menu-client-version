@@ -14,7 +14,7 @@ interface BasketPaymentPreviewProps {
 const BasketPaymentPreview = ({ open, setOpen }: BasketPaymentPreviewProps) => {
   const { basketInfo, companyVat } = useBasketTotalInfo();
 
-  const ref = useRef<HTMLDivElement>(null);
+  const ref = useRef<any>(null);
   useClickOutside(ref, () => setOpen(false));
 
   return (

@@ -36,7 +36,7 @@ export function buildMetadata(info: ICompany | null): IMetaData {
       description: info?.description ?? "",
       images: [
         {
-          url: "http://localhost:5173/icon512_rounded.png",
+          url: "https://menu.loyaltyhub.ir/icon512_rounded.png",
           width: 800,
           height: 600,
           alt: info?.name ?? "لوگو شرکت",
@@ -47,12 +47,12 @@ export function buildMetadata(info: ICompany | null): IMetaData {
       card: "summary_large_image",
       title: info?.name ?? "منو دیجیتال",
       description: info?.description ?? "",
-      images: ["http://localhost:5173/icon512_rounded.png"],
+      images: ["https://menu.loyaltyhub.ir/icon512_rounded.png"],
     },
     icons: {
-      icon: "http://localhost:5173/icon512_rounded.png",
+      icon: "https://menu.loyaltyhub.ir/icon512_rounded.png",
     },
-    metadataBase: new URL("http://localhost:5173"),
+    metadataBase: new URL("https://menu.loyaltyhub.ir"),
   };
 }
 
