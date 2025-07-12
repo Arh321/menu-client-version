@@ -1,0 +1,27 @@
+.marque_container {
+  padding: 0;
+  background-color: transparent;
+  width: 100%;
+  overflow: hidden;
+  text-align: center;
+}
+
+.marque_container:hover [class~="marque"] {
+  animation-play-state: paused;
+}
+
+.marque {
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  animation: marque 3s linear infinite;
+}
+
+@keyframes marque {
+  0% {
+    transform: translate3d(0px, 0px, 0px);
+  }
+  50% {
+    transform: translate3d(-50%, 0px, 0px);
+  }
+}

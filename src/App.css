@@ -1,0 +1,128 @@
+@import "tailwindcss";
+@import "./styles/tailwindConfig.css";
+@import "./styles/swiper-styles.css";
+@import "./styles/app-fonts.css";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+html {
+  background-color: #232323;
+  direction: rtl;
+}
+
+*::-webkit-scrollbar {
+  width: 4px;
+}
+
+@media screen and (max-width: 480px) {
+  *::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--color-light-background);
+  border-radius: 3px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--color-light-primary);
+  border-radius: 3px;
+}
+.sm-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-light-primary) transparent;
+}
+
+.sm-scrollbar::-webkit-scrollbar {
+  width: 2px !important;
+  background: transparent !important;
+}
+
+.sm-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--color-light-primary);
+  border-radius: 3px;
+}
+
+body {
+  color: var(--color-light-foreground);
+  background: var(--color-light-background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+.border-gradient-secondary {
+  border-bottom: 2px solid transparent;
+  border-image: linear-gradient(
+      90deg,
+      rgba(30, 156, 81, 0.1) 0%,
+      rgba(161, 161, 161, 1) 50%,
+      rgba(30, 156, 81, 0.1) 100%
+    )
+    1;
+}
+
+.border-gradient-primary {
+  border-bottom: 4px solid transparent;
+  border-image: linear-gradient(
+      90deg,
+      transparent 0%,
+      var(--color-light-primary) 50%,
+      transparent 100%
+    )
+    1;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.border-gradient {
+  position: relative;
+}
+
+.border-gradient::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: inherit;
+  padding: 2px;
+  background: linear-gradient(232deg, #fff, #fff0, #fff);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+/* Custom fade transition for Ant Design Modal */
+.fade-enter,
+.fade-appear {
+  opacity: 0;
+}
+
+.fade-enter-active,
+.fade-appear-active {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out; /* <-- change duration here */
+}
+
+.fade-leave {
+  opacity: 1;
+}
+
+.fade-leave-active {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out; /* <-- change duration here */
+}

@@ -1,0 +1,18 @@
+.menus-section-container {
+  width: 100%;
+  padding: 4px 24px 4px 24px;
+}
+.menus-section-container [class~="swiper-slide"] {
+  height: 105px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.menus-section-container
+  [class~="swiper-wrapper"]
+  [class~="swiper-slide-active"] {
+  transform: scale(1.05);
+  transition: colors 0.5s ease-in-out;
+  border: 1px solid var(--secondary-text);
+  box-shadow: 0 1px 16px -5px var(--secondary-text);
+}
