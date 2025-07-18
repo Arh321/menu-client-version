@@ -9,11 +9,14 @@ import { useDispatch } from "react-redux";
 import { toPersianCurrency } from "@/utils/numberToRial";
 import CTAButton from "@/components/shared-components/cta-button/cta-button";
 import ImageWithLoader from "@/components/shared-components/image-with-loader/image-with-loader";
+import { useNavigate, useParams } from "react-router";
 interface BasketProductListProps {
   product: IBasketState;
 }
 
 const BasketProductList = ({ product }: BasketProductListProps) => {
+  const { depId } = useParams();
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const image = useMemo(() => {
     return product.image ?? "";
@@ -22,7 +25,12 @@ const BasketProductList = ({ product }: BasketProductListProps) => {
   return (
     <div className="w-full flex items-center justify-between px-4">
       <div className="w-max flex items-center gap-4">
-        <div className="size-[50px] rounded-[10px] overflow-hidden">
+        <div
+          onClick={() => {
+            navigate(`/departments/${depId}/products/${product.productId}`);
+          }}
+          className="size-[50px] rounded-[10px] overflow-hidden"
+        >
           <ImageWithLoader
             src={image}
             alt={product.title}
