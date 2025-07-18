@@ -19,6 +19,7 @@ export interface IMetaData {
     card: string;
     title: string;
     description: string;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     images: any[];
   };
   icons: {
@@ -52,7 +53,7 @@ export function buildMetadata(info: ICompany | null): IMetaData {
     icons: {
       icon: "https://menu.loyaltyhub.ir/icon512_rounded.png",
     },
-    metadataBase: new URL("http://localhost:5173"),
+    metadataBase: new URL("https://menu.loyaltyhub.ir"),
   };
 }
 
@@ -103,7 +104,8 @@ export function injectMetadata(metadata: IMetaData) {
 
   // Optional: set base
   if (metadata.metadataBase) {
-    let base = document.querySelector("base") || document.createElement("base");
+    const base =
+      document.querySelector("base") || document.createElement("base");
     base.setAttribute("href", metadata.metadataBase.toString());
     document.head.appendChild(base);
   }

@@ -16,7 +16,7 @@ const BasketProductsListContainer: React.FC<
       className={clsx(
         "flex flex-col gap-4 transition-[height] duration-500 overflow-hidden relative",
         {
-          "h-[260px]": !open,
+          "h-[360px] sm:h-[260px]": !open,
           "h-[200px]": open,
         }
       )}
