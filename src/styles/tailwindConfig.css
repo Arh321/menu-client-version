@@ -14,29 +14,17 @@
   --font-Yekan-Thin: "Thin", sans-serif;
   --font-Yekan-Ultra-Light: "Ultra-Light", sans-serif;
 
-  --color-light-background: #ffffff;
-  --color-light-foreground: #000000;
-  --color-light-primary: #1e90ff;
+  --color-light-background: var(--background);
+  --color-light-foreground: var(--foreground);
+  --color-light-primary: var(--primary);
   --color-light-primary-disabled: #b3d4fc;
   --color-light-primary-hover: #1c86ee;
-  --color-light-primary-text: #ffffff;
-  --color-light-secondary: #f0f0f0;
-  --color-light-secondary-text: #333333;
-  --color-light-gray: #d1d5db;
-  --color-light-white: #ffffff;
-  --color-light-text: black;
-
-  --color-background-dark: #121212;
-  --color-foreground-dark: #e0e0e0;
-  --color-primary-dark: #1e90ff;
-  --color-primary-disabled-dark: #3a3a3a;
-  --color-primary-hover-dark: #3b82f6;
-  --color-primary-text-dark: #ffffff;
-  --color-secondary-dark: #1f1f1f;
-  --color-secondary-text-dark: #cccccc;
-  --color-gray-dark: #6b7280;
-  --color-white-dark: #ffffff;
-  --color-text-dark: #e5e7eb;
+  --color-light-primary-text: var(--primaryText);
+  --color-light-secondary: var(--secondary);
+  --color-light-secondary-text: var(--secondaryText);
+  --color-light-gray: var(--gray);
+  --color-light-white: var(--white);
+  --color-light-text: var(--text);
 
   --screen-vld: 0px;
   --screen-lxs: 375px;

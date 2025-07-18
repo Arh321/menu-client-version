@@ -30,9 +30,12 @@ const BasketContainer = () => {
     <div className="w-full flex flex-col justify-between h-full ">
       <div className="w-full flex flex-col">
         <BasketProductsListContainerLazy basket={basket} open={open} />
-        <BasketSplitRouteButtonLazy depId={depId as string} navigate={navigate} />
+        <BasketSplitRouteButtonLazy
+          depId={depId as string}
+          navigate={navigate}
+        />
       </div>
-      <div className="w-full fixed bottom-0 left-0 right-0 bg-light-background h-max">
+      <div className="w-full fixed bottom-0 left-0 right-0 bg-light-background h-max max-w-[470px] mx-auto">
         <div className="w-full relative">
           <BasketPaymentPreviewLazy open={open} setOpen={setOpen} />
 

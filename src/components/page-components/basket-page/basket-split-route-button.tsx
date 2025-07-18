@@ -18,7 +18,7 @@ const BasketSplitRouteButton: React.FC<BasketSplitRouteButtonProps> = ({
       </div>
       <CTAButton
         onClick={() => navigate(`/departments/${depId}/basket/split`)}
-        className="!bg-light-primary-disabled border border-light-primary !p-2 h-max"
+        className="!bg-light-primary/30 border border-light-primary !p-2 h-max hover:!bg-light-primary/60"
       >
         <span className="text-xs whitespace-nowrap">تقسیم دنگی</span>
       </CTAButton>

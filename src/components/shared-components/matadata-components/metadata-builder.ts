@@ -52,7 +52,7 @@ export function buildMetadata(info: ICompany | null): IMetaData {
     icons: {
       icon: "https://menu.loyaltyhub.ir/icon512_rounded.png",
     },
-    metadataBase: new URL("https://menu.loyaltyhub.ir"),
+    metadataBase: new URL("http://localhost:5173"),
   };
 }
 

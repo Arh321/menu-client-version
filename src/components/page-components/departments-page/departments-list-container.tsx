@@ -8,7 +8,6 @@ import { memo, Suspense, useMemo } from "react";
 import { getDepartments } from "@/services/departmentService";
 import ErrorComponent from "@/components/shared-components/error-component/error-component";
 
-
 interface DepartmentsListContainerProps {
   debouncedSearch: string;
 }
@@ -47,7 +46,7 @@ const DepartmentsListContainer: React.FC<DepartmentsListContainerProps> = ({
   }
 
   return (
-    <div className="w-full overflow-y-auto overflow-x-hidden h-full pb-24">
+    <div className="w-full grow overflow-y-auto overflow-x-hidden h-full pb-5">
       <div className="flex flex-col gap-3 w-full">
         {departments?.map((shop, index) => (
           <Suspense

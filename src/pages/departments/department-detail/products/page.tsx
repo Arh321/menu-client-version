@@ -28,8 +28,10 @@ const ProductsListPage = () => {
     );
   }, [menus, selectedMenu]);
 
-  const { scrollRef, handleProductsScrolling, tabScrolling } =
-    useHandleProductsScrolling(selectedCategory);
+  const { setIsManualScroll } = useHandleProductsScrolling(
+    setSelectedCategory,
+    filteredCategories.length > 0
+  );
 
   if (isFetching) return <SplashScreen />;
   if (isError) {
@@ -38,7 +40,7 @@ const ProductsListPage = () => {
 
   return (
     <Suspense fallback={<SplashScreen />}>
-      <div className="w-full flex flex-col grow h-full">
+      <div className="w-full flex flex-col grow h-full overflow-hidden">
         <div className="w-full flex flex-col shadow-xl">
           <MenusSectionContainer
             menus={menus ?? []}
@@ -49,21 +51,15 @@ const ProductsListPage = () => {
             categories={filteredCategories}
             selectedCategory={selectedCategory}
             setSelectedCategory={setSelectedCategory}
+            setIsManualScroll={setIsManualScroll}
           />
         </div>
         <div className="w-full h-[calc(100%-204px)] overflow-hidden">
           <div
-            ref={scrollRef}
-            onScroll={handleProductsScrolling}
             id="products-scroll-container"
             className="w-full h-full overflow-y-auto pb-[200px]"
           >
-            <ProductsSectionContainer
-              category={filteredCategories}
-              selectedCategory={selectedCategory}
-              setSelectedCategory={setSelectedCategory}
-              tabScrolling={tabScrolling}
-            />
+            <ProductsSectionContainer category={filteredCategories} />
           </div>
         </div>
         <BasketPopup />

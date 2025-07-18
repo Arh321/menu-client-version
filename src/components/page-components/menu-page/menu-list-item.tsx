@@ -67,7 +67,7 @@ const MenuListItemComponent: React.FC<MenuListItemComponentProps> = ({
             alt={menu.menu_name}
             loading="lazy"
             fetchPriority="high"
-            imageClass="object-cover w-full h-full"
+            imageClass="[&_img]:!object-cover w-full h-full"
           />
         </div>
       </div>

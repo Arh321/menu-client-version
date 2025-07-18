@@ -1,6 +1,6 @@
 import { ICompany } from "@/types/company-type";
 import { IHttpResult } from "@/types/http-result";
-import { useQuery } from "@tanstack/react-query";
+import { useSuspenseQuery } from "@tanstack/react-query";
 import { useEffect, useState, useCallback, useMemo } from "react";
 import { useDispatch } from "react-redux";
 import {
@@ -50,7 +50,7 @@ const useThemeConfig = () => {
     isError,
     error,
     refetch,
-  } = useQuery<IHttpResult<ICompany[]>>({
+  } = useSuspenseQuery<IHttpResult<ICompany[]>>({
     queryKey: ["companies"],
     queryFn: () => getCompanies(),
     refetchOnWindowFocus: false,

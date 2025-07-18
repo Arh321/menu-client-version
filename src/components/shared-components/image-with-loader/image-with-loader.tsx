@@ -69,7 +69,7 @@ const ImageWithLoader = ({
     <div
       ref={ref}
       className={clsx(
-        "relative overflow-hidden bg-light-secondary",
+        "relative overflow-hidden bg-transparent",
         shouldUseFill && "w-full aspect-square", // fallback aspect ratio
         imageClass
       )}

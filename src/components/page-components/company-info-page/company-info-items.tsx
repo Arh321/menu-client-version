@@ -1,6 +1,12 @@
 import { Dispatch, memo, SetStateAction, Suspense } from "react";
 import { CompanyInfoItemLazy } from "./company-page-lazy-components";
 import { DepartmentItemSkeleton } from "../departments-page/department-item-skeleton";
+import {
+  ClockIcon,
+  ContactOutlineIcon,
+  MapIcon,
+  SocialIcon,
+} from "@/components/icons/icons-index";
 
 interface CompanyInfoItemsContainerProps {
   openModals: {
@@ -34,22 +40,46 @@ const CompanyInfoItemsContainer: React.FC<CompanyInfoItemsContainerProps> = ({
 
   const companyInfoItems = [
     {
-      icon: "teenyicons:contact-outline",
+      icon: (
+        <ContactOutlineIcon
+          width="28"
+          height="28"
+          color="var(--color-light-secondary-text)"
+        />
+      ),
       title: "ارتباط با ما",
       onClick: () => setOpenModals({ ...openModals, ContactUsDrawer: true }),
     },
     {
-      icon: "tabler:clock",
+      icon: (
+        <ClockIcon
+          width="28"
+          height="28"
+          color="var(--color-light-secondary-text)"
+        />
+      ),
       title: "ساعات کاری",
       onClick: () => setOpenModals({ ...openModals, WorkTimesDrawer: true }),
     },
     {
-      icon: "tabler:social",
+      icon: (
+        <SocialIcon
+          width="28"
+          height="28"
+          color="var(--color-light-secondary-text)"
+        />
+      ),
       title: "شبکه های اجتماعی",
       onClick: () => setOpenModals({ ...openModals, SocialModal: true }),
     },
     {
-      icon: "tabler:map-pin",
+      icon: (
+        <MapIcon
+          width="28"
+          height="28"
+          color="var(--color-light-secondary-text)"
+        />
+      ),
       title: "موقعیت مکانی",
       onClick: goToMap,
     },

@@ -1,12 +1,11 @@
-import { Icon } from "@iconify/react/dist/iconify.js";
-import { memo } from "react";
+import React, { memo } from "react";
 
 const CompanyInfoItem = ({
   icon,
   title,
   onClick,
 }: {
-  icon: string;
+  icon: React.JSX.Element;
   title: string;
   onClick: () => void;
 }) => {
@@ -18,7 +17,7 @@ const CompanyInfoItem = ({
     >
       <span className="size-3 border-2 border-light-white rounded-full"></span>
       <div className="bg-[rgb(0,0,0,0.8)] text-light-white flex items-center gap-2 h-full grow  rounded-[10px] px-4">
-        <Icon icon={icon} width="24" height="24" />
+        {icon}
         <span className="grow text-center">{title}</span>
       </div>
     </div>

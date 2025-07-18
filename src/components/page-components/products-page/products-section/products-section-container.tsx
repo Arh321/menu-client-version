@@ -1,30 +1,21 @@
 import { Category } from "@/types/menu/menu-types";
 import ProductsCard from "./products-card";
-import { Dispatch, SetStateAction, Suspense } from "react";
+import { Suspense } from "react";
 import { Spin } from "antd";
 import ProductsListHEader from "./products-list-header";
 interface IProductsSectionContainerProps {
   category: Category[];
-  selectedCategory: Category | null;
-  setSelectedCategory: Dispatch<SetStateAction<Category | null>>;
-  tabScrolling: boolean;
 }
 
 const ProductsSectionContainer = ({
   category,
-  setSelectedCategory,
-  tabScrolling,
 }: IProductsSectionContainerProps) => {
   return (
     <div className="w-full flex flex-col gap-4 p-4">
       <Suspense fallback={<Spin />}>
         {category.map((category, index) => (
           <div key={index}>
-            <ProductsListHEader
-              category={category}
-              setSelectedCategory={setSelectedCategory}
-              tabScrolling={tabScrolling}
-            />
+            <ProductsListHEader category={category} />
             <div className="w-full flex flex-col gap-4">
               {category.products.map((product, index) => (
                 <ProductsCard key={index} product={product} />

@@ -1,11 +1,10 @@
-"use client";
 import React, { memo, Suspense, useRef } from "react";
 import clsx from "clsx";
 import { motion } from "framer-motion";
 import { DepartmentItemSkeleton } from "./department-item-skeleton";
 import ImageWithLoader from "@/components/shared-components/image-with-loader/image-with-loader";
 import { useNavigate } from "react-router";
-
+import style from "./department-item-style.module.css";
 interface ProvidersCardProps {
   name: string;
   imageSrc: string;
@@ -14,19 +13,6 @@ interface ProvidersCardProps {
   enName: string;
   index: number;
 }
-
-const hoverStyles = [
-  "[&_.image-container]:right-0",
-  "[&_.image-container]:!w-full",
-  "[&_.image-container]:!rounded-none",
-  "[&_.image-container]:!overflow-hidden",
-  "[&_.image-container]:!object-cover",
-  "[&_.image-container]:!h-full",
-  "[&_.text-container]:!w-full",
-  "[&_.text-container]:!h-full",
-  "[&_.text-container]:!bg-[rgba(0,0,0,0.7)]",
-  "!p-0",
-];
 
 const ProvidersCard: React.FC<ProvidersCardProps> = ({
   name,
@@ -41,17 +27,6 @@ const ProvidersCard: React.FC<ProvidersCardProps> = ({
   const handleClick = () => {
     navigate(`/departments/${cardDestination}`);
   };
-  const handleMouseEnter = () => {
-    if (ref.current) {
-      ref.current.classList.add(...hoverStyles);
-    }
-  };
-
-  const handleMouseLeave = () => {
-    if (ref.current) {
-      ref.current.classList.remove(...hoverStyles);
-    }
-  };
 
   return (
     <motion.div
@@ -64,10 +39,9 @@ const ProvidersCard: React.FC<ProvidersCardProps> = ({
       exit={{ opacity: 0, y: -10 }}
       transition={{ duration: 0.4, delay: index * 0.1 }}
       className={clsx(
-        "w-full h-[80px] lxs:h-[85px] xs:h-[90px] p-1 flex items-center relative cursor-pointer overflow-hidden animate-fadeIn rounded-full text-base font-Yekan-Bold bg-[#2D2D2D] hover:bg-[#3D3D3D]"
+        "w-full h-[80px] lxs:h-[85px] xs:h-[90px] p-1 flex items-center relative cursor-pointer overflow-hidden animate-fadeIn rounded-full text-base font-Yekan-Bold bg-[#2D2D2D] hover:bg-[#3D3D3D]",
+        style["container"]
       )}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
       onClick={handleClick}
     >
       <Suspense
@@ -83,8 +57,8 @@ const ProvidersCard: React.FC<ProvidersCardProps> = ({
             alt={`${name} pic`}
             loading="lazy"
             fetchPriority="low"
-            imageClass="object-cover w-full h-full"
-          // loading="eager" // ← اگه تصویر خیلی مهمه، فعال کن!
+            imageClass="[&_img]:!object-cover w-full h-full"
+            // loading="eager" // ← اگه تصویر خیلی مهمه، فعال کن!
           />
         </div>
       </Suspense>

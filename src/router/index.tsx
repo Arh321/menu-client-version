@@ -10,14 +10,24 @@ import {
   ProductPage,
   ProductsListPage,
   WelcomePage,
-  SplitPage
+  SplitPage,
 } from "./lazy-route-import";
 import SearchPage from "@/pages/departments/department-detail/search/page";
+
+import { rootLoader } from "./rootLoader";
+import RouteErrorComponent from "./routeErrorComponent";
+import RouteLoaderWrapper from "./routeComponentLoader";
 
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: <ConfigLayout />, // Wrapper for all routes
+    element: (
+      <RouteLoaderWrapper>
+        <ConfigLayout />
+      </RouteLoaderWrapper>
+    ), // Wrapper for all routes
+    loader: () => rootLoader(),
+    errorElement: <RouteErrorComponent />,
     children: [
       {
         index: true,
@@ -69,13 +79,13 @@ export const router = createBrowserRouter([
                   {
                     path: "",
                     index: true,
-                    element: <BasketPage />
+                    element: <BasketPage />,
                   },
                   {
                     path: "split",
-                    element: <SplitPage />
-                  }
-                ]
+                    element: <SplitPage />,
+                  },
+                ],
               },
               {
                 path: "search",

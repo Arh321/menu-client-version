@@ -9,8 +9,8 @@ const DepartmentsList = () => {
     useSearchDepartments();
 
   return (
-    <div className="flex flex-col gap-3 w-full px-4 pb-4 h-[calc(100vh-100px)]">
-      <div className="w-full h-max flex justify-center items-center gap-2 p-2 rounded-[6px] border border-light-gray hover:border-light-primary-hover transition-all focus-within:border-light-primary-hover">
+    <div className="flex flex-col gap-3 w-full px-4 pb-4 h-full">
+      <div className="w-full h-max flex justify-center items-center gap-2 p-2 rounded-[6px] border border-light-gray hover:border-light-primary/60 transition-all focus-within:border-light-primary/60">
         <CTAInput
           placeholder="جستجو مجموعه ها"
           haveBorder={false}

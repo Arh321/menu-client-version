@@ -19,7 +19,7 @@ const WelcomeSwiperContainer = () => {
       <Swiper
         speed={400}
         dir="rtl"
-        pagination={{ el: "#paginateRef", clickable: true }}
+        pagination={{ el: "#paginateRef", clickable: false }}
         navigation={{
           nextEl: "#custom-swiper-page-next",
           prevEl: "#custom-swiper-page-prev",
@@ -44,7 +44,7 @@ const WelcomeSwiperContainer = () => {
                 <ImageWithLoader
                   src={slide.image}
                   alt="menu-welcome-bg"
-                  imageClass="w-full h-full object-contain flex items-center justify-center"
+                  imageClass="w-full h-full [&_img]:!object-contain flex items-center justify-center"
                   width={290}
                   height={290}
                 />

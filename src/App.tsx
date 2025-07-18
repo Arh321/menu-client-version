@@ -8,7 +8,7 @@ function App() {
   return (
     <ReduxProvider>
       <NotifyProvider>
-        <div className="bg-transparent transition-colors duration-300 font-Yekan-Regular text-black max-w-[768px] mx-auto h-svh">
+        <div className="bg-transparent transition-colors duration-300 font-Yekan-Regular text-black max-w-[768px] mx-auto h-dvh">
           <RouterProvider router={router} />
         </div>
       </NotifyProvider>

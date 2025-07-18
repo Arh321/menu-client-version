@@ -47,7 +47,7 @@ const ProductHeader = ({ navigate }: { navigate: NavigateFunction }) => {
   }, [totalItems]);
 
   return (
-    <header className="w-full grid grid-cols-3 gap-4 items-center pt-4 px-4 fixed top-0 left-0 z-50 right-0 max-w-[768px] mx-auto">
+    <header className="w-full max-w-[470px] grid grid-cols-3 gap-4 items-center pt-4 px-4 fixed top-0 left-0 z-50 right-0  mx-auto">
       <div className="col-span-1 flex items-center gap-2">
         <CTAButton
           onClick={handleShare}
@@ -62,7 +62,7 @@ const ProductHeader = ({ navigate }: { navigate: NavigateFunction }) => {
             title={false}
             open={open}
             classNames={{
-              body: "!bg-light-primary-hover font-Yekan-Regular [&_.ant-popover-inner-content]:!text-white",
+              body: "!bg-light-primary/70 font-Yekan-Regular [&_.ant-popover-inner-content]:!text-white",
             }}
           >
             <CTAButton

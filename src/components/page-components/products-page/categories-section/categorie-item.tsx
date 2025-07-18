@@ -5,9 +5,9 @@ import clsx from "clsx";
 import React, { memo, useMemo } from "react";
 
 interface CategoryItemProps {
-  handleCategoryClick: (category: Category) => void;
+  handleCategoryClick: (categoryId: number) => void;
   category: Category;
-  selectedCategory: Category | null;
+  selectedCategory: number | null;
 }
 
 const CategoryItem: React.FC<CategoryItemProps> = ({
@@ -16,16 +16,16 @@ const CategoryItem: React.FC<CategoryItemProps> = ({
   selectedCategory,
 }) => {
   const isSelected = useMemo(() => {
-    return selectedCategory?.category_id === category.category_id;
-  }, [category.category_id, selectedCategory?.category_id]);
+    return selectedCategory === category.category_id;
+  }, [category.category_id, selectedCategory]);
   return (
     <div
-      onClick={() => handleCategoryClick(category)}
+      onClick={() => handleCategoryClick(category?.category_id ?? 0)}
       data-category-id={category.category_id}
       className={clsx(
         "flex flex-col gap-2",
         isSelected &&
-        " [&_.text-sec]:!text-light-primary [&_.text-sec]:!text-sm"
+          " [&_.text-sec]:!text-light-primary [&_.text-sec]:!text-sm"
       )}
     >
       <div

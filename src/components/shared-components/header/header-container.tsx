@@ -30,7 +30,10 @@ const HeaderContainer = () => {
       ) : isCompanyInfoPage ? (
         <CompanyHeader setOpen={setOpen} />
       ) : isInSplt ? (
-        <SplitPageHeader navigate={navigate} />
+        <SplitPageHeader
+          navigate={navigate}
+          companyLogo={companyLogo as string}
+        />
       ) : (
         <MainHeader
           setOpen={setOpen}
